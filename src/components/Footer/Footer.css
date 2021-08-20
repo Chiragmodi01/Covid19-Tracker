@@ -1,0 +1,33 @@
+.footer-wrapper {
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(to left, #2193b0 0%, #6dd5ed 100%);
+    padding: 10px 0;
+    margin: 6px 0;
+    border-radius: 1rem;
+}
+
+.quote-author {
+    padding-left: 500px;
+    padding-top: 15px;
+}
+
+.madeby {
+    height: 9vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.madeby-text {
+    margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .footer-wrapper {
+        height: auto;
+    }
+    .quote-author {
+        padding: 0;
+    }
+  }

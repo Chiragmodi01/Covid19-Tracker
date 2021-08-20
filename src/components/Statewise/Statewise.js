@@ -6,49 +6,50 @@ const Statewise = () => {
 
     const [data, setData] = useState([]);
 
+
+    //fetching data from api and awaiting json response
     const getCovidData = async () => {
         const res = await fetch('https://data.covid19india.org/data.json');
         const actualData = await res.json();
-        setData(actualData.statewise);                                      //it will automatically put the value inside data
+        setData(actualData.statewise);
     }
 
+    //funtion will run on page load
     useEffect(() => {
-        getCovidData();                                                     //funtion will run on page load
+        getCovidData();
     }, [])
-
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0');                 //getting current date uing date api (January is 0!)
-    var yyyy = today.getFullYear();
-
-    today = mm + '/' + dd + '/' + yyyy;
+    console.clear()
 
 
-    function myClock() {         
-      setTimeout(function() {   
-        const d = new Date();
-        const n = d.toLocaleTimeString();                                   //getting current time and updating it every second
-        document.getElementById("clock").innerHTML = n; 
-        myClock();             
-      }, 1000)
-    }
-    myClock();   
+    //tried checkbox and date functionality below ⬇️
+
+    /**data.forEach((o, i) => o.id = (i-1) + 1);
+      console.log(data);
+
+    const [isChecked, setIsChecked] = useState(false);
+
+      const handleOnChange = () => {
+        setIsChecked(!isChecked);
+        console.log("unchecked")
+      };
+
+      var checkbox = document.getElementsByClassName('states-checkbox');
+      checkbox = [];
+      checkbox.forEach((o, i) => o.name = (i-1) + 1);
+      console.log(checkbox[2]);
+
+      function change_css(){
+        var elems = document.getElementsByClassName('number');
+        for (var i=0;i<elems.length;i+=1){
+            if (checkbox.name === data.id) {
+            elems[i].style.visibility = 'visible';
+            }
+            console.log(checkbox.id)
+            }}
+    **/
 
     return (
         <div>
-            <header>
-            <div className="clock">
-                <h2>
-                📅  {today}
-                </h2>
-                <h2>
-                🕒 <span id="clock"></span>
-                </h2>
-            </div>
-            <div>
-            <h1>INDIA Covid-19 Dashboard</h1>
-            </div>
-            </header>
             <div className="table-wrapper">
                 <table className="table">
                     <thead>
@@ -66,16 +67,17 @@ const Statewise = () => {
                         {
                             data.map((curElem, ind) => {
                                 return (
-                                    //fetching data statewize
-
+                                    //displayin data statewize
+                                    <>
                                     <tr key={ind} >
-                                        <th className="state"> {curElem.state} </th>
-                                        <td className="number confirmed"> {curElem.confirmed} </td>
-                                        <td className="number recovered"> {curElem.recovered} </td>
-                                        <td className="number deaths"> {curElem.deaths} </td>
-                                        <td className="number active"> {curElem.active} </td>
-                                        <td className="number updates"> {curElem.lastupdatedtime} </td>
+                                        <th className="state states-checkbox"> {curElem.state} </th>
+                                        <td className="number confirmed" id="value"> {curElem.confirmed} </td>
+                                        <td className="number recovered" id="value"> {curElem.recovered} </td>
+                                        <td className="number deaths" id="value"> {curElem.deaths} </td>
+                                        <td className="number active" id="value"> {curElem.active} </td>
+                                        <td className="number updates" id="value"> {curElem.lastupdatedtime} </td>
                                     </tr>
+                                    </>
                                 )
                             })
                         }

@@ -1,19 +1,30 @@
-<h1>AppScrip Round 1 - Covid19 Tracker</h1>
-<br/>
-This is a demo site created for assignment of AppScrip.
-<br/>
-Live Demo: https://covid-tracker-cm.netlify.app
+# AppScrip Round 1 - Covid19 Tracker
+## _This is a demo site created for assignment of AppScrip_
+***
+## Tech stack
+* **Html5**
+* **CSS3**
+* **ReactJS**
+* **Recharts**
+* **MaterialUI**
+***
 
-<h3>Running the Site Locally</h3>
-<li>
-<ol>Clone the repo.</ol>
-<ol>Open the <code> index.html </code> file in any browser of your choice.</ol>
-</li>
-<br/>
-<h3>Developing the Site Locally</h3>
-<li>
-<ol>Clone the repo</ol>
-<ol>Open the cloned repo in you code editor.</ol>
-<ol>Open a terminal in the directory where you cloned the repo.</ol>
-<ol>Run <code> npm install </code> </ol>
-</li>
+[Live Demo](https://covid-tracker-cm.netlify.app)
+
+## Features
+
+- Live Clock and Date (consumes date api)
+- Live Updated Total Covid Cases In Indian
+- Live Updated Covid Cases of Every Indian State
+- Live Data of Confirmed, Recovered, Deaths and Active Cases
+- Scroll to Top Button
+- All media Responsive
+***
+
+### Developing the Site Locally
+
+1. Clone the repo
+2. Open the cloned repo in you code editor.
+3. Open a terminal in the directory where you cloned the repo.
+4. Run the command `npm install`
+5. To view live on browser, Run the command `npm start` 

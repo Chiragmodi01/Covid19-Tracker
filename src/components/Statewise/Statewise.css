@@ -4,23 +4,15 @@
     font-family: 'Nunito', sans-serif;
 }
 
-header {
-    background: linear-gradient(to right, #2193b0 0%, #6dd5ed 100%);
-    padding: 10px 0;
-    margin-bottom: 6px;
-    border-radius: 1rem;
-}
-
-.clock {
-    text-align: right;
-    padding: 0 30px;
-}
-
 .table{
     width: 100%;
     background: #6dd5ed;
     padding: 10px 0;
     border-radius: 1rem;
+}
+
+.table-wrapper{
+    overflow: overlay;
 }
 
 th{
@@ -31,7 +23,12 @@ th{
 
 .number{
     padding: 20px 50px;
+    transition: all .18s linear;
 }
+
+.number:hover {
+    transition: all .18s linear;
+  }
 
 thead {
     font-size: 1.25em;
@@ -53,3 +50,19 @@ tr:hover{
 .active:hover{
     background-color: #FB923C;
 }
+
+.states-checkbox:checked .number{
+    visibility: visible;
+}
+
+::-webkit-scrollbar{
+    width: 14px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent,#2193b0);
+    border-radius: 8px;
+    filter: blur(30px);
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent,#6dd5ed);
+  }

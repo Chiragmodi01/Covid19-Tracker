@@ -1,0 +1,80 @@
+header {
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(to right, #2193b0 0%, #6dd5ed 100%);
+    padding: 10px 0;
+    margin-bottom: 6px;
+    border-radius: 1rem;
+}
+
+.clock {
+    text-align: left;
+    padding: 0 30px;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.currdate, .currtime {
+    letter-spacing: 4px;
+}
+
+.clock-img {
+    width: 100px;
+    padding:  10px 10px 0 0;
+}
+
+.calendar {
+    text-align: right;
+    padding: 0 30px;
+}
+
+.input-calendar {
+    height: 4vh;
+    width: 150px;
+    padding: 5px;
+    border: 1.5px solid black;
+    border-radius: 1em;
+    outline: none;
+    font-weight: bold;
+}
+
+.title {
+    margin: 0;
+    font-size: 2.3em;
+    text-transform: uppercase;
+}
+
+.title, .span-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.corona-img {
+    width: 45px;
+    width: 50px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 6s linear infinite;
+    }
+    @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+    @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+    @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+    @media screen and (max-width: 480px) {
+        header {
+            height: auto;
+        }
+        .title, .span-img {
+            display: contents;
+        }
+        .title-container {
+            margin-top: 10px;
+        }
+        .corona-img {
+            transform: translateY(10px);
+            animation: none;
+        }
+      }
